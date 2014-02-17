@@ -1,0 +1,17 @@
+name: BAnvil
+version: 1.0
+author: broswen
+main: me.broswen.banvil.BAnvil
+description: a custom anvil manager plugin
+
+commands:
+  banvil:
+    description: the plugin info command
+
+permissions:
+  banvil.info:
+    description: allows you to use the info command
+    default: op
+  banvil.use:
+    description: allows you to use the anvil
+    default: op

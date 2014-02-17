@@ -10,11 +10,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BAnvil extends JavaPlugin{
 	public static BAnvil plugin;
 	public String prefix = ChatColor.DARK_GRAY + "[BAnvil] " + ChatColor.RESET;
+	public final PlayerListener playerlistener = new PlayerListener();
 	
 	@Override
 	public void onEnable(){
 		loadConfig();
 		this.plugin = this;
+		getServer().getPluginManager().registerEvents(this.playerlistener, this);
 	}
 	
 	@Override
