@@ -15,3 +15,9 @@ permissions:
   banvil.use:
     description: allows you to use the anvil
     default: op
+  banvil.break:
+    description: allows you to break anvils
+    default: op
+  banvil.place:
+    description: allows you to place anvils
+    default: op
