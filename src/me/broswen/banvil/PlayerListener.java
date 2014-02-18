@@ -29,12 +29,16 @@ public class PlayerListener implements Listener{
 			return;
 		}
 		
-		if(!player.hasPermission("banvil.use")){
-			if(event.getClickedBlock().getType() == Material.ANVIL){
-				event.setCancelled(true);
-				player.sendMessage(plugin.prefix + "You are not permitted to use anvils!");
-			}
+		if(player.hasPermission("banvil.use")){
+			return;
 		}
+		
+		if(!(event.getClickedBlock().getType() == Material.ANVIL)){
+			return;
+		}
+		
+		event.setCancelled(true);
+		player.sendMessage(plugin.prefix + "You are not permitted to use anvils!");
 	}
 	
 	@EventHandler
@@ -46,13 +50,16 @@ public class PlayerListener implements Listener{
 			return;
 		}
 		
-		if(event.getBlock().getType() == Material.ANVIL){
-			
-			if(!player.hasPermission("banvil.break")){
-				event.setCancelled(true);
-				player.sendMessage(plugin.prefix + "You are not permitted to break anvils!");
-			}
+		if(!(event.getBlock().getType() == Material.ANVIL)){
+			return;
 		}
+		
+		if(player.hasPermission("banvil.break")){
+			return;
+		}
+		
+		event.setCancelled(true);
+		player.sendMessage(plugin.prefix + "You are not permitted to break anvils!");
 	}
 	
 	@EventHandler
@@ -64,13 +71,16 @@ public class PlayerListener implements Listener{
 			return;
 		}
 		
-		if(event.getBlock().getType() == Material.ANVIL){
-			
-			if(!player.hasPermission("banvil.place")){
-				event.setCancelled(true);
-				player.sendMessage(plugin.prefix + "You are not permitted to place anvils!");
-			}
+		if(!(event.getBlock().getType() == Material.ANVIL)){
+			return;
 		}
+		
+		if(player.hasPermission("banvil.place")){
+			return;
+		}
+		
+		event.setCancelled(true);
+		player.sendMessage(plugin.prefix + "You are not permitted to place anvils!");
 	}
 	
 	@EventHandler
